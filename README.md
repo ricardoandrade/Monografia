@@ -7,8 +7,8 @@ Autor: Ricardo Andrade
 Links Utéis
 -------
 
-* [Apresentação](https://) -- Repositorio da monografia.
+* [Apresentação](https://github.com/ricardoandrade/Apresentacao) -- Repositorio da apresentação da monografia.
 
-* [Implementação](https://) -- Repositorio com os codigos fontes que implementão o projeto.
+* [Implementação](https://github.com/ricardoandrade/ARHydra) -- Repositorio com os códigos fontes implementados no projeto.
 
-* [Artigos](https://www.dropbox.com/...) -- Respositório dos artigos utilizados na monografia.
+* [Referências bibliográficas](https://www.dropbox.com/sh/u3705nvlfdx66qx/Xe4FTL_d3S/Refer%C3%AAncias%20Bibliogr%C3%A1ficas) -- Respositório dos artigos utilizados na monografia.
