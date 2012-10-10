@@ -1,0 +1,56 @@
+\chapter{Implementação e testes}
+\label{cap:implementacao_testes}
+
+%\epigraph{`` Modernizar não é sofisticar. Modernizar é simplificar.''}{Joelmir Beting}
+
+
+	A ARHydra tem por objetivo prover uma interface de interação aprimorada à Hydra, de modo que o
+	usuário tenha uma maior transparência e facilidade na seleção dos recursos do ambiente. No capítulo
+	anterior foi detalhado o seu uso, já neste serão apresentados os aspectos relativos a sua
+	implementação. Neste sentido será enfatizada a sua arquitetura e os testes realizados.
+	
+	A aplicação foi desenvolvida para ser utilizada em \textit{smartphones} dotados de tela sensível ao toque e câmera.
+	Tais dispositivos são adequados para a realidade aumentada devido a mobilidade, além disso permite 
+	que o usuário interaja com o ambiente e a informação de forma direta (Visão Direta). Como
+	plataforma foi utilizada o sistema Android que faz uso da máquina virtual Dalvik. Esta escolha
+	permitiu o uso do~\textit{middleware uOS}, desenvolvido em Java, sem grandes complicações.
+
+ 	A figura \ref{fig:interacao_modulos} apresenta como os quatro módulos da aplicação interagem entre
+ 	si. O fluxo tem início com a obtenção da imagem capturada pela câmera do celular. Este é repassado
+ 	ao Módulo de Reconhecimento (seção~\ref{sec:modulo_reconhecimento}) onde são encontrados os
+ 	marcadores presentes na imagem sendo exibida. Identificado um marcador é então calculado seu
+ 	centro, bem como a sua orientação.
+ 	
+	Conhecendo a posição do marcador na imagem cabe ao Módulo de Decodificação
+	(seção~\ref{sec:modulo_decodificacao}) extrair a informação presente. Esta consiste de um código
+	identificador do dispositivo representado, sendo utilizado na localização dos recursos
+	disponíveis.
+	
+	Conhecendo as informações sobre o dispositivo, cabe ao Módulo de Apresentação
+	(seção~\ref{sec:modulo_apresentacao}) desenhar o objeto virtual na tela. As informações que compõe
+	esse objeto são obtidas a partir da integração entre a Hydra e a ARHydra, tarefa esta sob
+	responsabilidade do Módulo de Integração (seção~\ref{sec:modulo_integracao}). No objeto virtual são
+	exibidas as informações que auxiliem o usuário na sua escolha, sendo estas composta pelo nome do
+	dispositivo e os recursos por ele disponibilizados. Por fim, o Módulo de Integração possibilita ao
+	usuário o redirecionamento ou a liberação de um recurso.
+	
+	Tanto o Módulo de Reconhecimento quanto o Módulo de Decodificação possuem suas próprias linhas de
+	execução, ocasionando uma interação assíncrona entre esses módulos. Por causa desse tipo de
+	interação, a comunicação entre esses módulos é feita através de eventos, isso propicia que seja
+	mantida a interação junto ao usuário enquanto o processamento é realizado em segundo plano.
+	
+	\begin{figure}[htb]
+		\centering \includegraphics[scale=0.45]{figuras/cap4/interacao_modulos.png}
+		\caption{\textit{Interação entre os módulos.}}
+		\label{fig:interacao_modulos} 
+	\end{figure}
+
+	\input{chapters/4.Implementacao/reconhecimento}
+	\input{chapters/4.Implementacao/decodificacao}
+	\input{chapters/4.Implementacao/integracao}
+	\input{chapters/4.Implementacao/apresentacao}
+	\input{chapters/4.Implementacao/hydradriver}
+	\input{chapters/4.Implementacao/testes}
+		 
+	
+

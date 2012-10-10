@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classe do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[bacharelado]{unb-cic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacotes importados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[american,brazil]{babel}
+\usepackage[brazil]{translator}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{natbib}
+\usepackage{xcolor,graphicx,url,epstopdf}
+\usepackage{epigraph}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage {pdfsync}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{textcomp}
+\usepackage{comment} 
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{hhline}
+ 
+
+%\bibpunct[; ]{(}{)}{,}{a}{}{;}%muda colchetes para parênteses
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cores dos links
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Veja o arquivos cores.tex se quiser ver que outras cores estão
+% pré-definidas.  Utilizando o comando \hypersetup abaixo nós
+% evitamos aquelas caixas vermelhas feias em volta dos links.
+
+%\input{cores}
+%\hypersetup{
+%  colorlinks=true,
+%  linkcolor=DarkScarletRed,
+%  citecolor=DarkScarletRed,
+%  filecolor=DarkScarletRed,
+%  urlcolor= DarkScarletRed
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações sobre a monografia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{ARHydra - Uma proposta de visualização e redirecionamento de recursos utilizando Realidade
+Aumentada}
+
+\orientador{\prof \dr Ricardo Pezzuol Jacobi}{CIC/UnB}
+\coorientador{Fabrício Nogueira Buzeto}{CIC/UnB}
+
+\coordenador{\prof \dr Alexandre Zaghetto}{CIC/UnB}
+
+\diamesano{8}{outubro}{2012}
+                           
+\membrobanca{\prof \dr Pedro de Azevedo Berger}{CIC/UnB}
+
+\membrobanca{\prof \ms Tiago Barros Pontes e Silva}{DIN/UnB} 
+
+\autor{Ricardo Felipe Lacerda de}{Andrade}
+\CDU{004.4}
+
+\palavraschave{realidade aumentada, computação ubíqua, redirecionamento de recursos }
+\keywords{augmented reality, ubiquitous computing, resource redirect}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+ 	\lstset{tabsize=4}
+  	\renewcommand\lstlistingname{Listagem}
+  	\renewcommand\lstlistlistingname{Listagens}
+  	\maketitle
+  	\pretextual
+ 
+	\input{chapters/1.Introducao/dedicatoria}
+	\input{chapters/1.Introducao/agradecimentos}
+	\input{chapters/1.Introducao/resumo}
+	
+	\selectlanguage{brazil}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	\textual
+	\input{chapters/1.Introducao/introducao}
+	\input{chapters/2.RealidadeAumentada/realidadeaumentada}
+	\input{chapters/3.Proposta/proposta}
+	\input{chapters/4.Implementacao/implementacao}
+	\input{chapters/5.Conclusao/conclusao}
+
+	%\anexos
+	%\input{chapters/0.Anexos/anexos}
+	
+	\postextual
+	
+	\bibliographystyle{plain}
+	\bibliography{bibliografia}
+
+\end{document}

@@ -1,0 +1,68 @@
+\chapter{Introdução} 
+
+%\epigraph{`` Cada geração de computadores desmoraliza as antecedentes e seus criadores. ”
+% }{Carlos Drummond de Andrade}
+
+	
+	Conhecida também como \textit{ubicomp}, a Computação ubíqua tem por objetivo permitir  
+	que a interação entre o usuário e as tarefas a 
+	serem desempenhas ocorram de forma transparente. Por essa razão
+	a~\textit{ubicomp} também é chamada de Computação Invisível~\cite{markHotTopics,markWorld,rawesak}. 
+	Essa invisibilidade permite ao usuário focar mais na tarefa a ser desempenhada e não na 
+	ferramenta a ser manipulada para sua execução. Para isso, todos os serviços e dispositivos 
+	seriam regidos sem a intervenção do usuário~\cite{mark21Century}. 
+	
+	Essa interação inteligente, entre usuários e dispositivos, é realizada através de cenários onde 
+	estão integrados vários dispositivos, recursos e~\textit{softwares} especializados para a 
+	construção deste tipo de ambiente, denominado de~\textit{smart spaces}~\cite{ubiSmartSpace}. 
+	Essa inteligência é baseada na análise de informações de contexto do ambiente para que serviços
+	possam ser providos de forma pró-ativa, antecipando as necessidades do usuário~\cite{paulDourish}. Para que a 
+	interação ocorra, faz-se necessário a criação de camadas de~\textit{softwares}, também denominados 
+	de~\textit{middlewares}, com o propósito de orquestrar a troca de informações a respeito dos 
+	usuários e dispositivos inseridos no~\textit{smart space}. Ele abstrai os detalhes
+	relativos as camadas inferiores, como por exemplo, serviços de segurança, comunicação, escalabilidade, 
+	heterogeneidade de dispositivos, adaptabilidade e identificação de serviços. Isso permite que 
+	aplicações possam interagir com o usuário para que sejam disponibilizados recursos com o propósito
+	de melhor atender suas tarefas e necessidades.
+	
+	Com a evolução da tecnologia novos recursos foram inseridos nos dispositivos. O ambiente inteligente deve
+	oferecer informações, a respeito dessa variedade de recursos, para auxiliar as aplicações inteligentes 
+	na seleção daqueles recursos necessários à execução de uma determinada tarefa. Para isso o~\textit{middleware}
+	cria uma instância para cada recurso presente e o disponibiliza  no ambiente através de um identificador
+	único. Por outro lado, este identificador pode trazer dificuldades para o usuário associá-lo ao dispositivo
+	que esteja disponibilizando-o, devido a volatilidade e a quantidade de dispositivos inseridos no ambiente 
+	inteligente. Por essa razão, faz-se necessário a criação de mecanismos com o objetivo de facilitar a sua 
+	localização, visualização e utilização desses recursos. 
+	
+	Como exemplo de aplicação inteligente que utiliza recursos disponíveis no ambiente, o UnBiquitous desenvolveu 
+	a Hydra, aplicação que proporciona o redirecionamento de recursos entre dispositivos. Para interagir com os 
+	dispositivos, a Hydra utiliza o~\textit{uOS}, um~\textit{middleware} em desenvolvimento junto a UnB cujo foco 
+	é a adaptabilidade de serviços em um ambiente inteligente~\cite{almeida,buzeto}. A Hydra possui uma interação 
+	feita de forma sugerida, apresentando ao usuário somente os recursos que lhe são compatíveis. Ela não 
+	implementa mecanismos que facilite a associação dos recursos sugeridos aos dispositivos de origem.  
+	
+	Para minimizar esse problema foi desenvolvido a aplicação ARHydra (\textit{Augmented Reality Hydra}). Ela
+	utiliza os conceitos providos pela Realidade Aumentada para combinar uma visão do~\textit{smart space}
+	e dos recursos disponíveis nele, com o objetivo de criar uma nova forma de identificação desses recursos e 
+	prover uma interface mais intuitiva para o redirecionamento dos mesmos. Esta aplicação faz uso de 
+	marcadores para identificar um dispositivo e apresentar seus recursos ao usuário através de objetos virtuais, 
+	sendo estes visualizados a partir de um~\textit{smartphone} utilizando a plataforma Android. Os marcadores são 
+	representados através de um código bidimensional, o QRCode, afixado em local visível sobre os dispositivos. 
+	Através do código é possível identificar o dispositivo e determinar, através do~\textit{uOS}, o conjunto de 
+	recursos que ele disponibiliza ao~\textit{smart space}. Isto permite ao usuário interagir
+	com o objeto virtual apresentado e prover o redirecionamento dos recursos apresentados.
+	
+	Este trabalho se encontra organizado da seguinte maneira: o Capítulo~\ref{cap:realidadeaumentada} 
+	fundamenta os conceitos a respeito da Realidade Aumentada apresentando suas aplicações, classificações,
+	marcadores, além de alguns trabalhos relativos a Realidade Aumentada aplicadas no contexto da Computação 
+	Ubíqua. O Capítulo~\ref{cap:arhydra} mostra uma visão geral do projeto UbiquitOS. A aplicação 
+	ARHydra é apresentada após um detalhamento dos conceitos referentes à Hydra. Nela é descrita seus
+	conceitos, marcadores a serem utilizados e sua integração com o ambiente. O 
+	Capítulo~\ref{cap:implementacao_testes} detalha as etapas de implementação, as soluções utilizadas
+	para reconhecimento e apresentação dos recursos, bem como sua integração com a Hydra. Adicionalmente,
+	neste capítulo também são apresentados os resultados de testes realizados sob a aplicação, bem como a sua 
+	discussão. No Capítulo~\ref{cap:conclusao} são relacionadas algumas considerações finais sobre este trabalho 
+	e sugestões de trabalhos futuros. 
+	
+	
+ 

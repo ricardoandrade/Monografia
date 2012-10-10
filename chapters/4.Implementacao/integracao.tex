@@ -1,0 +1,26 @@
+\section{Módulo de Integração} 
+\label{sec:modulo_integracao}
+
+	Na composição do objeto virtual é necessário reunir informações relevantes sobre a disponibilidade dos 
+	recursos provido pelo dispositivo escolhido. O Módulo de Integração é responsável pela integração da 
+	ARHydra com a Hydra com o propósito de criar um canal de comunicação entre essas duas aplicações. Esta 
+	integração é feita através de \textit{drivers} de comunicação, conforme	estabelecido pela DSOA. 
+	
+	Quando um recurso apresentado pelo dispositivo é selecionado faz-se necessário informar a Hydra	qual 
+	recurso fora escolhido. Esse canal externo de comunicação entre as aplicações não é fornecida pelo 
+	\textit{uOS} de forma nativa. Por essa razão, a arquitetura inicial da Hydra 
+	não implementou nenhuma forma para o recebimento de requisições externas. Permite apenas a interação 
+	via terminal de aplicação, ou seja, sem acesso por outras aplicações. Desta forma, para o usuário 
+	redirecionar algum recurso, ele terá que ir até o dispositivo executando a Hydra e prover o 
+	redirecionamento de forma manual. Para realizar essa comunicação foi desenvolvido um~\textit{driver} 
+	na Hydra que possibilitasse o recebimento de requisições externas. O envio das requisições, bem como
+	o recebimento das respostas realizadas pelas mesmas, decorrentes dessa comunicação, ocorre através do 
+	Módulo de Integração.  
+
+	Para economizar recursos do \textit{smartphone}, a obtenção da informação de quais dispositivos
+	estão disponíveis dentro do ambiente inteligente fica sob responsabilidade da Hydra, ao qual implementará
+	mecanismos para identificação dos dispositivos no ambiente através da utilização de radares. A ARHydra 
+	possui um mecanismo de agendamento para que essa informação seja atualizada. Com a periodicidade de 60 segundos, 
+	o Módulo de Integração envia informações para a Hydra requisitando quais são os dispositivos que estão 
+	ativos dentro do ambiente.
+	

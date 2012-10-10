@@ -1,0 +1,43 @@
+%-------------------------- DEFY
+	
+	\begin{table}[ph] % aqui começa o ambiente tabela
+		\centering
+		\caption{Resultados obtidos utilizando a aplicação ZBar para o dispositivo Motorola Defy.}
+		\begin{tabular}{|l|c|c|c|c|c|c|c|} 
+			\hline
+			\multirow{2}{*}{\textbf{Tempos médio e taxas}} & \multicolumn{6}{|c|}{\textbf{Distância (metro)}} \\
+			\hhline{~------}
+			& \textbf{0,5} & \textbf{0,6} & \textbf{0,7} & \textbf{0,8} & \textbf{0,9} & \textbf{1} \\
+			\hline
+			Primeiro reconhecimento & 2,03s	 & 1,92s & 1,42s & 1,52s & 1,68s & 1,25s	\\
+			Recorrência & 1,78s & 1,81s & 1,53s & 1,40s & 1,38s & 1,34s \\
+			Reconhecimento ao perder o marcador & 1,20s & 1,24s & 1,16s & 1,22s & 1,18s & 1,11s  \\
+			Taxa de erro & 12,42\% & 15,18\% & 5,35\% & 10,38\% & 13,10\% & 12,67\% \\
+			Taxa de não decodificação & 3,21\% & 6,23\% & 12,04\% & 7,23\% & 7,38\% & 8,32\% \\
+			\hline
+		\end{tabular}
+		 % igual ao ambiente figura
+		\label{tab:testeDefyDesempenho}
+	\end{table}
+	
+	%-------------------------- GALAXY
+	
+	\begin{table}[ph] % aqui começa o ambiente tabela
+		\centering
+		\caption{Resultados obtidos utilizando a aplicação ZBar para o dispositivo Samung Galaxy S III.}
+		\begin{tabular}{|l|c|c|c|c|c|c|c|} 
+			\hline
+			\multirow{2}{*}{\textbf{Tempos médio e taxas}} & \multicolumn{6}{|c|}{\textbf{Distância (metro)}} \\
+			\hhline{~------}
+			& \textbf{0,5} & \textbf{0,6} & \textbf{0,7} & \textbf{0,8} & \textbf{0,9} & \textbf{1} \\
+			\hline
+			Primeiro reconhecimento & 0,58s	 & 0,50s & 0,55s & 0,50s & 0,57s & 0,47s	\\
+			Recorrência & 0,67s & 0,59s & 0,63s & 0,57s & 0,58s & 0,57s \\
+			Reconhecimento ao perder o marcador & 0,51s & 0,44s & 0,47s & 0,45s & 0,46s & 0,44s  \\
+			Taxa de erro & 0,79\% & 1,53\% & 5,41\% & 18,05\% & 17,35\% & 42,67\% \\
+			Taxa de não decodificação & 12,57\% & 9,82\% & 14,35\% & 5,76\% & 6,80\% & 5,33\% \\
+			\hline
+		\end{tabular}
+		 % igual ao ambiente figura
+		\label{tab:testeGalaxyDesempenho}
+	\end{table}

@@ -1,0 +1,106 @@
+\subsection{~\textit{uP}}
+\label{sec:up}
+
+
+	Devido a grande diversidade e níveis de processamentos de dispositivos presentes no ~\textit{smart
+	space}, tornou-se necessário a busca de uma maneira mais simples e padronizada para que os mesmos
+	pudessem trocar as informações. Buzeto ~\cite{uos},	propõe um protocolo para a computação ubíqua,
+	implementada sobre o ~\textit{middleware uOS}, denominada de ~\textit{Ubiquitous Protocols (uP)}.
+	Esse conjunto de protocolos permite uma interação entre os dispositivos levando-se em conta a
+	heterogenidade das plataformas, os diferentes modelos de comunicação e interação com o ambiente.
+	
+	O protocolo ~\textit{uP} utiliza a tecnologia ~\textit{JavaScript Object Notation (JSON)} para o
+	tráfego de dados entre os dispositivos. Tanto tecnologia ~\textit{JSON} quanto o
+	~\textit{Extensible Markup Language (XML)}, possuem os conceitos herdados do ~\textit{SOA}, motivo
+	que viabilizou a sua utilização na arquitetura ~\textit{DSOA}. Algumas características são
+	similares nessas tecnologias, tais como:  independência de plataforma, formato estruturado e
+	auto-descritivo.
+	
+	Podemos citar algumas vantagens da tecnologia ~\textit{JSON}, quando comparada ao ~\textit{XML}
+	~\cite{enokiFreitas}, que viabilizaram seu uso no ~\textit{uP}:
+
+		\begin{enumerate}
+		  \item baixo custo computacional
+          \item carga de processamento
+          \item transferência dos dados
+          \item demandam menor esforço
+          \item economia de recursos computacionais e bateria, devido a redução no tempo de
+          tratamento das mensagens.
+		\end{enumerate}
+ 
+	
+	% --------------------- INTERFACES ---------------------
+	
+	\subsubsection{Interfaces}
+	
+	Através de interfaces públicas pré definidas, o ~\textit{uP} implementa os conceitos apresentados
+	pela ~\textit{DSOA} da seguinte maneira:
+	
+	\begin{enumerate}
+	  \item \textit{UpDevice}
+
+			Representa, de forma única, os dispositivos presentes no ambiente inteligente. Possui as
+			propriedades ~\textit{Name}, responsável por identificar o dispositivo, e  ~\textit{Networks},
+			representando uma lista de redes de comunicação presentes no dispositivo, onde cada elemento da
+			lista é composto pelo tipo de conexão da rede e seu endereço.
+	  
+	  \item \textit{UpDriver}
+	  		
+	  		Esta por sua vez, define as propriedades dos recursos do dispositivo. Cada instância possui um
+	  		identificador ~\textit{InstanceID} porque o mesmo ~\textit{driver} pode ser instanciado mais de
+	  		uma vez.
+			
+			Possui as propriedades ~\textit{Name}, responsável por identificar o recurso, ~\textit{Services}
+			e ~\textit{Events}, listas de serviços síncronos e assíncronos, respectivamente.
+			  
+	  \item \textit{UpService}
+			
+			Representa o conceito de serviço. Também possui um atributo ~\textit{Name}, responsável por
+			identificar o serviço, e ~\textit{Parameters}, informando os parâmetros necessários para a
+			execução, sendo estes obrigatórios ou opcionais.
+	
+	\end{enumerate}
+	
+	% --------------------- TIPOS DE MENSAGENS ---------------------
+	
+	\subsubsection{Tipos de mensagens}
+	
+	O ~\textit{uP} implementa quatro tipos de mensagens possibilitando assim uma comunicação e
+	interação entre os dispositivos no ambiente. São elas:
+	
+	\begin{enumerate}
+	  	\item \textit{Service Call}
+		
+			Troca de mensagens em serviços síncronos. Aceita parâmetros opcionais e obrigatórios definidos
+			em suas propriedades.
+		
+		\item \textit{Service Response}
+			
+			Responsável por retornar uma mensagem contendo informações de resposta a solicitação do
+			~\textit{Service Call}.
+		
+		\item \textit{Notify}
+		
+			Resposta a uma requisição assíncrona de um evento.
+	
+		\item \textit{Encapsulated Message}
+		
+			São utilizadas para encapsular mensagens dentro de outras mensagens, permite uma codificação de
+			mensagens. Essa encriptação favorece o estabelecimento de canais de comunicação mais seguros.
+	
+	\end{enumerate} 
+	
+	% --------------------- PROTOCOLOS BÁSICOS --------------------
+	
+	
+	\subsubsection{Protocolos}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

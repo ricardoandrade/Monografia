@@ -1,0 +1,93 @@
+\chapter{Realidade aumentada}
+\label{cap:realidadeaumentada}	
+%	\epigraph{``Colocar algo aqui ''}{Autor}
+
+	A Realidade Virtual utiliza a tecnologia com o propósito de simular uma inserção do usuário em um
+	mundo virtual onde ele não conseguiria distinguir o cenário real daquele em que fora inserido, ou
+	seja, o usuário estaria inserido em uma simulação de um mundo complemente sintético
+	\cite{ronaldAzuma}. Esse mundo sintético pode imitar as propriedades de alguns ambientes
+	encontrados no mundo real, podendo até exceder os limites da realidade física.
+	
+	Em contraste com a Realidade Virtual, a Realidade Aumentada permite ao usuário focar em seu
+	ambiente físico e interagir em tempo real entre ambos os mundos. Essa nova forma de interação
+	possibilita ao usuário manipular informações entre esses mundos de uma forma mais natural, ou seja,
+	minimizando a necessidade de um treinamento para sua adaptação~\cite{kernerTori}. De forma geral,
+	pode-se citar três características principais de aplicações desenvolvidas para a Realidade Aumentada:
+	
+	\begin{itemize}
+	  \item Combinação entre o real e o virtual;
+	  \item Interatividade em tempo real;
+	  \item Possibilidade de visualização de objetos virtuais em 3D.
+	\end{itemize}
+	
+	A Realidade Aumentada combina uma visão composta por cenas reais (visualizados pelo usuário) com
+	objetos virtuais (gerados com auxílio do computador) para serem apresentadas ao usuário com o
+	objetivo de inserir novas informações virtuais a respeito de objetos físicos visualizados por ele. O
+	reconhecimento dos objetos físicos pode ocorrer através do uso marcadores, onde cada objeto físico possui
+	seu marcador que o identifique e suas informações são apresentadas através de objetos virtuais.
+	Tais informações são projetadas com o objetivo de melhorar a percepção sensorial do usuário com
+	relação aos cenários obtidos pela integração do real com o virtual~\cite{tobias}.
+	
+	A Realidade Aumentada está inserida dentro de um conceito denominado Realidade Misturada. Esta
+	é definida como um ambiente no qual os objetos pertencentes tanto mundo real quanto ao mundo
+	virtual são apresentados de forma simultânea ao usuário. A Realidade Misturada visa complementar
+	aspectos de ambos os mundos através do uso de informações incluídas em elementos virtuais. A
+	figura~\ref{fig:diagramaRV} apresenta a divisão desses conceitos.
+	
+	\begin{figure}[htb]
+		\centering \includegraphics[scale=.8]{figuras/cap2/rv.jpg}
+		\caption{\textit{Ambiente de Realidade Misturada ~\cite{kernerTori}}}
+		\label{fig:diagramaRV} 
+	\end{figure}
+	
+	\begin{enumerate}
+	  \item \textbf{Ambiente Real:} Representa um ambiente constituído exclusivamente de objetos reais. 
+	
+	  \item \textbf{Realidade Aumentada:} Possui o ambiente real como interface de interação com o
+	  usuário, com o propósito de inserir novas informações nele através de objetos virtuais.
+
+	  \item \textbf{Virtualidade Aumentada:} A diferença entre a Realidade Aumentada e a Virtualidade
+	  Aumentada está em sua forma de interação. Esta tem a finalidade de inserir elementos reais dentro
+	  do mundo virtual e utilizar o ambiente virtual como interface de usuário. Para que isso ocorra, a
+	  Virtualidade Aumentada utiliza técnicas computacionais para capturar elementos reais e inseri-los
+	  no mundo virtual como objetos virtuais, como por exemplo, uma foto do usuário (objeto real) ser 
+	  escaneada ou retirada através de uma~\textit{webcam} e ser inserida no mundo virtual para compor o
+	  objeto virtual.
+
+	  \item \textbf{Ambiente Virtual:} É definido como um ambiente compostos exclusivamente por objetos
+	  virtuais, simulando um ambiente completamente sintético.
+	
+	\end{enumerate}
+	
+	Como um todo, os sistemas desenvolvidos para a Realidade Aumentada apresentam pontos chaves para
+	seu funcionamento~\cite{henrysson}:
+	
+	\begin{enumerate}
+	  \item \textbf{Rastreamento:} O sistema é responsável por obter as informações corretas a respeito
+	  do posicionamento e orientação do usuário. A recuperação dessas informações torna-se necessária
+	  		para a apresentação do conteúdo virtual correspondente. Nesta etapa são utilizados equipamentos
+	  		(seção~\ref{sec:equipamentos}) responsáveis pela captura e processamentos dessas informações. O
+	  		estabelecimento desses parâmetros é conhecido como \textit{tracking}. 
+	  
+	  \item \textbf{Registro:} Após o rastreamento ser concluído é feito o registro das informações
+	  		correspondente a cada objeto reconhecido. O registro deve ser feito de modo que seja
+	  		preservada a interatividade do usuário para que a relação entre o real e o virtual estejam
+	  		alinhadas dentro de um mesmo domínio.
+	  			
+	  \item \textbf{Visualização:} A partir do resultado final gerado, esse sistema deve ser capaz de
+	  produzir os objetos correspondentes em algum dispositivo que permita ao usuário visualizar tais
+	  		informações.
+	  
+	\end{enumerate}
+	
+	O processamento destas imagens é constituído de etapas bem definidas
+	(seção~\ref{sec:reconhecimentoMarcadores}), tendo como etapa inicial o reconhecimento dos
+	marcadores utilizados pela Ralidade Aumentada e, posteriormente, a obtenção do código
+	identificador do marcador. Por fim, a construção do objeto virtual correspondente.
+	
+	\input{chapters/2.RealidadeAumentada/aplicacoes}
+	\input{chapters/2.RealidadeAumentada/equipamentos}
+	\input{chapters/2.RealidadeAumentada/classificacao}
+	\input{chapters/2.RealidadeAumentada/marcadores}
+	\input{chapters/2.RealidadeAumentada/reconhecimentoMarcadores}	
+	\input{chapters/2.RealidadeAumentada/trabalhosCorrelatos}	

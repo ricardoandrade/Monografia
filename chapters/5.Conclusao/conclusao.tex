@@ -1,0 +1,70 @@
+\chapter{Conclusão}
+\label{cap:conclusao}
+%\epigraph{`` Colocar algo. ”}{Autor}
+	 
+	
+	Com a evolução da computação móvel, os~\textit{smartphones} tornaram-se mais presentes em nosso dia a dia devido as
+	crescentes funcionalidades que oferecem aos usuários. Estes, por sua vez, podem ser 
+	compartilhados dentro da~\textit{ubicomp}, através do acesso aos seus serviços pelos demais
+	dispositivos inseridos dentro do~\textit{smart space}. É neste cenário que se insere a construção de mecanismos que 
+	simplifiquem a integração e visualização dos recursos. Seu intuito é que o usuário descubra de forma mais simples as 
+	opções que se encontram no ambiente a sua volta.
+	 
+ 	A aplicação ARHydra (\textit{Augmented Reality Hydra}) surgiu a partir dessa dificuldade em se localizar
+ 	e utilizar os recursos dos dispositivos no~\textit{smart space}. Tomando por base os conceitos de adaptabilidade de 
+ 	serviços providos pela DSOA, aplicado ao~\textit{middleware uOS}. A aplicação auxilia o usuário a localizar, 
+ 	visualizar e redirecionar os recursos presentes no ambiente inteligente através do uso de 
+ 	recursos da Realidade Aumentada e pela sua integração com a aplicação Hydra. 
+ 	
+ 	 	
+ 	Foram conduzidos conjuntos de testes cujo objetivo fosse validar a proposta desse trabalho. Como foi possível 
+ 	verificar com os testes apresentados na seção~\ref{sec:resultados}, a aplicação ARHydra operou de forma bastante
+ 	satisfatória para os resultados apresentados para estes testes.	Os resultados apresentaram a influência da 
+ 	qualidade na captura das imagens pelas câmeras. Essa qualidade não é caracterizada somente pela 
+ 	resolução da câmera, mas também por uma série de fatores que possam divergir no resultado mesmo quando aplicados 
+ 	nas mesmas condições de uso. Por essa razão, faz-se necessário aplicação de etapas de pré-processamento de 
+ 	imagens para minimizar este problema.
+ 	
+ 	Adicionalmente, os testes realizados voltados para validação da troca de informação, pelo do Módulo de Integração, 
+ 	entre as aplicações ARHydra e Hydra foram desenvolvidos utilizando o~\textit{framework} Junit. 
+ 	Através destes, comprovou-se a correta implementação dos objetivos propostos por este trabalho, facilitando ao 
+ 	usuário encontrar, visualizar e redirecionar um determinado	recurso à Hydra em poucos segundos, demonstrando ser 
+ 	uma boa forma de interação com a Hydra. No entanto, os testes demonstraram 
+ 	uma fragilidade da implementação da Hydra para o redirecionamento dos recursos de câmera e tela, implementados 
+ 	utilizando o JMF (\textit{Java Media Framework}), fazendo com que algumas vezes o redirecionamento não ocorra de
+ 	conforme o esperado.
+ 	
+ \section{Trabalhos Futuros}
+
+	A aplicação ARHydra tornou possível a interação dos usuários com o~\textit{smart space} de forma 
+	mais intuitiva, combinando os recursos providos pela Realidade Aumentada e os princípios envolvidos
+	pela~\textit{ubicomp}. Essa interação acrescentou mais características ubíquas a Hydra e proporcionou facilidades 
+	ao usuário na visualização e seleção dos recursos inseridos dentro do ambiente inteligente, possibilitada 
+	através da integração entre dessas duas aplicações. 
+	
+	Com o desenvolvimento da ARHydra, abre-se caminho para melhorias e novos desenvolvimentos. Dentre as melhorias 
+	podemos citar: 
+	
+	\begin{enumerate}
+	  
+	  \item Ampliação no reconhecimento dos marcadores para que a aplicação consiga identificar e interagir com 
+	  		múltiplos marcadores ao mesmo tempo, expandindo as possibilidades observados pelo usuário.
+	  
+	  \item Localização e reconhecimento de marcadores dentro de imagens mais complexas, possibilitando a implementação 
+	  		de técnicas de pré-processamento de imagens para aumentar a qualidade do reconhecimento e decodificação do 
+	  		QRCode, podendo minimizar os problemas decorrentes da captura dessas imagens em ambientes com pouca luminosidade. 
+	   
+	  \item Implementação de um mecanismos que identifique e armazene os marcadores que	foram reconhecidos. Atualmente, 
+	  		a não implementação deste mecanismo faz com que cada reconhecimento seja reprocessado a partir do início.
+			
+	  \item Devido a mobilidade dos dispositivos inseridos no~\textit{smart space} poderia 
+			ser desenvolvido uma integração	da ARHydra com tecnologias baseadas em rádio frequência, conforme visto 
+			na seção~\ref{sec:smart}, de forma com que o~\textit{uOS} ficasse responsável pelo gerenciamento e 
+			atualização do posicionamento dos objetos. Deste modo, o~\textit{uOS} disponibilizaria essas informações
+			através de um um canal de comunicação com a ARHydra onde essas informações poderiam ser atualizadas a cada
+			novo reconhecimento.     
+			
+	  \item Adaptação da aplicação ARHydra para sua utilização com outros tipos marcadores, que não utilizem o 
+	  		QRCode para armazenamento de informações a respeito do dispositivo.
+	  		
+	\end{enumerate}

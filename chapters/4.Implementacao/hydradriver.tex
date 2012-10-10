@@ -1,0 +1,23 @@
+\section{Hydra \textit{Driver}}
+\label{sec:hydradriver}
+
+	A aplicação Hydra foi concebida para ter seu controle realizado pelo usuário diretamente na máquina de 
+	onde os recursos seriam direcionados. Desta forma, não seria possível que outros dispositivos solicitassem 
+	que um novo redirecionamento seja realizado. Para superar esta limitação foi desenvolvido um~\textit{driver} 
+	denominado~\textit{HydraDriver} que disponibiliza as opções de interação da Hydra no~\textit{Smart Space}.
+	
+	Este recurso visa replicar as mesmas capacidades disponíveis na interface gráfica da aplicação original 
+	sendo composto por um conjunto de três serviços síncronos:
+	
+	\begin{enumerate}
+	  \item \textbf{Redirecionamento do recurso:} Com este serviço é possível redirecionar um recurso da 
+	  	máquina para um disponível em outro dispositivo.
+	  
+	  \item \textbf{Liberação do recurso:} Informado o recurso desejado e o dispositivo a ele relacionado, 
+	  	é finalizado o redirecionamento existente entre eles.
+	  
+	  \item \textbf{Uso do recurso:} Retorna as informações acerca do recurso local. Nestas informações 
+	  	é possível observar se ele está em uso no momento e para qual dispositivo está sendo redirecionado.
+	  
+	\end{enumerate}	
+	

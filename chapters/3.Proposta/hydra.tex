@@ -1,0 +1,163 @@
+\section{A aplicação Hydra}
+\label{sec:hydra}
+	
+	
+	Na visão da \textit{ubicomp}, o \textit{smart space} é composto por diversos dispositivos que
+	fornecem uma gama de recursos e funcionalidades. É plausível de se esperar que muitos destes
+	recursos sejam equivalentes entre si, como a existência de várias telas a disposição. Com tantas
+	opções espera-se que um ambiente inteligente possibilite ao usuário escolher aquela que melhor lhe
+	atende na tarefa sendo realizada. É neste cenário que a aplicação Hydra entra em cena. Fazendo uso
+	da plataforma provida pelo \textit{middleware uOS}, esta aplicação permite que o usuário
+	redirecionar os recursos de sua máquina para outros mais adequados no ambiente \cite{almeida}.
+
+    Para melhor entender a atuação da Hydra no ambiente considere o seguinte exemplo de uso:
+	 
+	O ambiente é dotado dos seguintes dispositivos:
+	 
+	
+	\begin{enumerate}
+		\item Macbook e o \textit{notebook} HP disponibilizam os recursos de \textit{webcam}, saída de
+		vídeo, mouse e teclado;
+		\item \textit{Laptop} Dell disponibiliza somente os recursos de saída de vídeo, mouse e teclado;
+		\item \textit{Smartphone} Galaxy SII disponibiliza os recursos de câmera, mouse e teclado;
+		\item \textit{SmartTV} disponibiliza os recursos de saída de vídeo. 
+	\end{enumerate}
+	
+	A seguir temos um exemplo de interação neste ambiente utilizando a Hydra:
+
+	\begin{quote}
+	
+		\it 	
+		Inicia-se uma reunião cujo propósito é alinhar os conhecimentos a respeito dos projetos do grupo 
+		UnBiquitous, discutir as soluções propostas e apresentar os artigos base para os projetos. Os
+		participantes da reunião são Marcelo (dono do notebook HP), Bruno (dono do smartphone Galaxy SII), Ricardo (dono do
+		Macbook) e Fabrício (dono laptop Dell).
+		
+		Para facilitar a visualização dos tópicos a serem discutidos, Fabrício como líder do projeto,
+		instalou a aplicação Hydra em seu laptop e redirecionou a tela do laptop para a SmartTV. Os
+		demais dispositivos estão utilizando uma instância do middleware uOS, disponibilizando seus
+		recursos ao ambiente.
+
+		Fabrício mostra a pauta da reunião. Após a discussão dos primeiros tópicos, Ricardo sente a
+		necessidade de complementar alguns tópicos apresentados. Ricardo então pede ao Fabrício que
+		redirecione o recurso de teclado do laptop Dell para seu Macbook. Após acrescentar os novos
+		tópicos, Ricardo pede ao Fabrício que libere o recurso do teclado, para que seja utilizado o
+		teclado do laptop do Fabríco novamente. Bruno percebe a necessidade de apontar algumas questões
+		nos novos tópicos criados pelo Ricardo e solicita ao Fabrício que o recurso de mouse seja
+		utilizado em seu celular. Com os avanços dos apontamentos feitos pelo Bruno, Marcelo
+		decide mostrar um vídeo que lhe chamou a atenção. Solicita então o uso do recurso de saída de vídeo para
+		que possa exibi-lo na SmartTV. Após o término da exibição do vídeo o grupo encerra as discussões
+		e finaliza a reunião.
+
+	\end{quote}
+		
+	Ao final da reunião, a aplicação Hydra proporcionou uma visão diferente no ~\textit{laptop} Dell
+	pertencente ao Fabrício devido ao redirecionamento dos recursos. Neste, os recursos de saída de
+	vídeo e \textit{mouse} estão direcionados para outros dispositivos no ambiente. Desta forma o
+	~\textit{laptop} do Fabrício pode ser visto como uma composição dos recursos que estão distribuídos
+	no ambiente. 
+	
+	Através desse exemplo foi possível observar que os dispositivos foram redirecionados de uma
+	forma manual, partindo de uma necessidade específica. No entanto, a Hydra pode implementar
+	inteligências que simplifiquem essa seleção e o redirecionamento dos recursos.
+	
+~\subsection{Recursos}
+
+	Com o propósito de preservar a invisibilidade do sistema, a interação do usuário com os recursos
+	pode acontecer de três formas distintas:
+	
+	\begin{itemize}
+	  \item Interação direta
+	  
+	  		Esta interação possibilita ao usuário escolher qual dispositivo será utilizado, levando
+	  		em consideração as vantagens e desvantagens de cada recurso.
+	  
+	  \item Interação sugerida
+	  
+	  		O sistema apresenta, de forma organizada, as possibilidades disponíveis compatíveis com a
+	  		necessidade do usuário em um determinado momento, sendo esta implementada através de um
+	  		mecanismo de inteligência.
+	  		
+	  \item Interação automática
+	  
+	  		Nesta interação, o sistema leva em consideração a sensibilidade do contexto para selecionar,
+	  		automaticamente, o dispositivo que mais adeque ao propósito de resolução da tarefa intencionada.
+	  		
+	\end{itemize}
+	
+	
+	A Hydra implementa a Interação Sugerida seguindo os conceitos apresentados pela \textit{DSOA}.
+	Ela oferece suporte para quatro tipos de recursos, sendo estes definidos no ambiente através de
+	\textit{UpDriver's}:
+	
+	\begin{enumerate}
+	  \item \textit{Mouse}
+		
+			Este \textit{driver} provê uma abstração para comandos enviados por um apontador. Os eventos
+			gerados por esse \textit{driver}, como por exemplo um clique duplo, são enviados ao destinatário
+			através de eventos compostos por mensagens. Estes eventos são reconhecidas na Hydra e a
+			movimentação do ponteiro na Hydra é feita com o uso da classe \textit{Robot}.
+			
+			São exemplos de serviços disponibilizados por esse recurso: 
+			\begin{itemize}
+			  \item posicionamento do ponteiro;
+			  \item clique simples;
+			  \item duplo clique;
+			  \item clique com o botão direito;
+			  \item	\textit{scroll}. 
+			\end{itemize}
+		
+	  		A implementação desse recurso está disponível para as versões JSE (\textit{Java Standard Edition)} 
+	  		e JME (\textit{Java Micro Edition}).
+
+	  \item Teclado
+	  		
+	  		Esse recurso possui um comportamento similar ao \textit{mouse}, no que diz respeito
+	  		envio dos eventos capturados. Este por sua vez, implementa o reconhecimento de
+	  		eventos para pressionamentos, simples e simultâneo, e liberação de teclas, realizando
+	  		capturas para:
+	  		
+	  		\begin{itemize}
+	  		  \item Caracteres, maiúsculos ou minúsculos;
+	  		  \item Números, de 0 a 9;
+	  		  \item Comandos de teclado (\textit{shift}, \textit{control} e \textit{alt});
+	  		  \item Teclas de funções  (F1 a F12);
+	  		  \item Botões do teclado numérico.
+	  		\end{itemize}
+	
+	  		Devido a diversidade de leiautes  configuráveis pelo teclado, os eventos capturados podem ser
+	  		interpretados pela Hydra de uma forma diferente. Um exemplo desse comportamento pode ser
+	  		observado no evento de captura da tecla ``ç'', para o leiaute do teclado no padrão ABNT2.
+	  		Neste caso, para o padrão ABNT, o evento que apresenta a tecla ``ç'' é configurado como uma
+	  		combinação de eventos de outras teclas. Essas diferenças são esperadas e podem serem corrigidas
+	  		através da configuração do novo leiaute.
+	  		
+	  		As mensagens recebidas pela Hydra são traduzidos em comandos, que por sua vez são emulados
+	  		utilizando a classe \textit{Robot}.
+	  		
+	  \item Tela
+	  	
+	  		Esse recurso utiliza a classe \textit{Robot} para capturar as imagens da tela, ao qual
+	  		posteriormente será sequencia e transformada em um formato de vídeo adequado para transmissão.
+	  		A transmissão do ~\textit{streaming} de dados é feita através do protocolo RTP (\textit{Real
+	  		Time Protocol}) utilizando o JMF (\textit{Java Media Framework}).
+
+	  		Após o recebimento do conteúdo na Hydra, o \textit{streaming} de dados é interpretado, 
+	  		reconstruído e posteriormente exibido na tela utilizada pela aplicação Hydra.
+	  	
+	  \item Câmera
+	  
+			De modo análogo a funcionalidade de tela, este \textit{driver} utiliza o protocolo RTP para
+			realizar a transmissão do \textit{streaming} de dados. Adicionalmente, este \textit{driver}
+			disponibiliza os serviços de seleção e ativação de câmeras presentes no dispositivo. Após a
+			detecção das câmeras e da seleção de qual câmera utilizar, a aplicação Hydra receberá o
+			\textit{streaming} de dados enviados pela câmera escolhida e exibirá o conteúdo recebido em uma
+			nova janela na tela utilizada pela Hydra.
+		
+	\end{enumerate}
+	
+	Com o suporte para esses conjunto de recursos, a Hydra consegue abranger uma boa gama de
+	cenários de uso. A maioria dos recursos estão classificados em um dos tipos de recursos
+	suportados pela Hydra, possibilitando assim o redirecionamento de diversos recursos presentes no
+	ambiente inteligente.
+	

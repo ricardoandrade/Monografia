@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Jul 09 18:40:47 BRT 2012
+markTmpDer=true
+builderNum=2
+outputDir=bin/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=monografia.tex
+outputFile=monografia.pdf
+langSpell=br
+markDer=true
+srcDir=
